@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#051e1a" />
   <title>Paulo Henrique Almeida — Nutricionista</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,11 +12,11 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0d0d0d;
-      --bg-card: #1a1a1a;
-      --border: #2e2e2e;
-      --gold: #c8a96e;
-      --gold-dim: #a08850;
+      --bg: #051e1a;          /* off black */
+      --bg-deep: #062825;     /* verde escuro */
+      --aqua: #5a7971;        /* verde aqua */
+      --off-white: #f1f5f3;   /* off white */
+      --ice: #dfe8e3;         /* cinza gelo */
     }
 
     body {
@@ -53,11 +54,11 @@
       height: 100%;
       background: linear-gradient(
         to bottom,
-        rgba(13,13,13,0.05) 0%,
-        rgba(13,13,13,0.10) 30%,
-        rgba(13,13,13,0.65) 55%,
-        rgba(13,13,13,0.92) 72%,
-        #0d0d0d 88%
+        rgba(5,30,26,0.05) 0%,
+        rgba(5,30,26,0.10) 30%,
+        rgba(5,30,26,0.65) 55%,
+        rgba(5,30,26,0.92) 72%,
+        var(--bg) 88%
       );
       z-index: 1;
     }
@@ -86,7 +87,7 @@
     .rule {
       width: 32px;
       height: 1px;
-      background: #3a3a3a;
+      background: var(--aqua);
       margin: 2px 0 4px;
     }
 
@@ -110,21 +111,12 @@
     .btn:hover  { transform: translateY(-2px); }
     .btn:active { transform: translateY(0); }
 
-    .btn-cta { background: var(--gold); color: var(--bg); }
-    .btn-cta:hover { background: #d9bb80; }
+    .btn-cta { background: var(--off-white); color: var(--bg-deep); font-weight: 600; }
+    .btn-cta:hover { background: var(--ice); }
 
-    .btn-secondary { background: rgba(26,26,26,0.85); color: var(--gold-dim); border: 1px solid var(--border); backdrop-filter: blur(4px); }
-    .btn-secondary:hover { background: rgba(34,34,34,0.9); }
 
     .icon { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
 
-    .footer {
-      color: var(--gold);
-      font-size: 0.58rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
   </style>
 </head>
 <body>
@@ -138,7 +130,7 @@
     <div class="rule"></div>
 
     <a class="btn btn-cta"
-       href="https://api.whatsapp.com/send?phone=5563999205568&text=Ol%C3%A1%2C%20vim%20do%20insta%20e%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Paulo%20Henrique"
+       href="https://api.whatsapp.com/send?phone=5563999705875&text=Ol%C3%A1%2C%20vim%20do%20insta%20e%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Paulo%20Henrique"
        target="_blank" rel="noopener noreferrer">
       <svg class="icon" viewBox="0 0 24 24">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -147,25 +139,8 @@
       Agendar Consulta
     </a>
 
-    <a class="btn btn-secondary"
-       href="https://share.google/eev6TjGMxF6pcMpPq"
-       target="_blank" rel="noopener noreferrer">
-      <svg class="icon" viewBox="0 0 24 24">
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-      </svg>
-      Como Chegar
-    </a>
 
-    <a class="btn btn-secondary"
-       href="https://drdourado.com.br"
-       target="_blank" rel="noopener noreferrer">
-      <svg class="icon" viewBox="0 0 24 24">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-      </svg>
-      Site Institucional
-    </a>
 
-    <p class="footer">Equipe Dr. Dourado &middot; Nutrição Esportiva</p>
   </div>
 
 </body>
