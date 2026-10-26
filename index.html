@@ -18,6 +18,7 @@
     --off-white: #F1F5F3;
     --cinza-gelo: #DFE8E3;
     --aqua-acao: #6EDEC4;
+    --verde-aqua-texto: #46635C;
 
     /* Derivados da paleta (transparências) */
     --texto-suave: rgba(241, 245, 243, .72);
@@ -60,7 +61,7 @@
     content: ""; position: absolute; inset: 0;
     background:
       radial-gradient(420px 320px at 85% 28%, rgba(110,222,196,.16), transparent 70%),
-      linear-gradient(180deg, rgba(5,30,26,.30) 0%, rgba(6,40,37,.42) 40%, rgba(6,40,37,.90) 74%, var(--verde-escuro) 100%);
+      linear-gradient(180deg, rgba(5,30,26,.06) 0%, rgba(6,40,37,.12) 42%, rgba(6,40,37,.78) 76%, var(--verde-escuro) 100%);
   }
   .hero__marca {
     width: 236px; aspect-ratio: 1200 / 232; margin-bottom: 16px; background: var(--off-white);
@@ -80,7 +81,7 @@
     cursor: pointer; touch-action: manipulation;
   }
   .btn:active { transform: scale(.97); }
-  .btn--prim { background: var(--aqua-acao); color: var(--off-black); box-shadow: 0 8px 28px rgba(110,222,196,.22); }
+  .btn--prim { background: var(--aqua-acao); color: var(--off-black); box-shadow: 0 8px 24px rgba(0,0,0,.28); }
   .btn--sec { border: 1px solid rgba(110,222,196,.5); color: var(--off-white); }
   .btn--escuro { background: var(--verde-escuro); color: var(--off-white); }
   .acoes { display: grid; gap: 10px; }
@@ -106,7 +107,7 @@
   .secao--gelo { background: var(--cinza-gelo); color: var(--verde-escuro); }
   .secao--preta { background: var(--off-black); }
   .sobretitulo { font-size: 11px; font-weight: 500; letter-spacing: .24em; text-transform: uppercase; color: var(--aqua-acao); margin-bottom: 12px; }
-  .secao--clara .sobretitulo, .secao--gelo .sobretitulo { color: var(--verde-aqua); }
+  .secao--clara .sobretitulo, .secao--gelo .sobretitulo { color: var(--verde-aqua-texto); }
   .secao h2 { font-weight: 600; font-size: 29px; line-height: 1.15; letter-spacing: -.02em; margin-bottom: 14px; text-wrap: balance; }
   .secao h2 em { font-style: normal; font-weight: 300; color: var(--aqua-acao); }
   .secao--clara h2 em, .secao--gelo h2 em { color: var(--verde-aqua); }
@@ -120,16 +121,16 @@
   .historia figcaption { padding: 0 6px 0 0; }
   .historia__num { display: block; font-size: 40px; font-weight: 700; line-height: 1.05; letter-spacing: -.025em; color: var(--aqua-acao); font-variant-numeric: tabular-nums; }
   .historia__t { text-wrap: balance; display: block; margin-top: 4px; font-size: 12.5px; font-weight: 500; line-height: 1.4; }
-  .historia__d { display: block; margin-top: 6px; font-size: 11.5px; font-weight: 300; line-height: 1.5; color: var(--texto-suave); }
+  .historia__d { display: block; margin-top: 6px; font-size: 12px; font-weight: 300; line-height: 1.5; color: var(--texto-suave); }
 
   .par { width: max-content; }
   .par__fotos { display: flex; gap: 4px; width: max-content; border-radius: var(--raio); overflow: hidden; background: var(--verde-escuro); }
-  .par__foto { position: relative; flex: none; height: 250px; aspect-ratio: 3 / 4; overflow: hidden; }
+  .par__foto { position: relative; flex: 0 0 auto; width: 188px; height: 250px; overflow: hidden; }
   .par__foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
-  .par__rotulo { position: absolute; left: 8px; bottom: 8px; font-size: 10px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; padding: 5px 9px; border-radius: 99px; background: rgba(5,30,26,.78); color: var(--off-white); }
+  .par__rotulo { position: absolute; left: 8px; bottom: 8px; font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; padding: 5px 9px; border-radius: 99px; background: rgba(5,30,26,.78); color: var(--off-white); }
   .par__foto:last-child .par__rotulo { background: var(--aqua-acao); color: var(--off-black); font-weight: 600; }
-  .par--sq .par__foto { aspect-ratio: 1 / 1; }
-  .par--historia .par__foto { aspect-ratio: 1113 / 1693; }
+  .par--sq .par__foto { width: 250px; }
+  .par--historia .par__foto { width: 164px; }
   .par--historia .par__rotulo:not(.par__rotulo--depois) { background: rgba(5,30,26,.78); color: var(--off-white); font-weight: 500; }
   .par__rotulo--depois { left: auto; right: 8px; background: var(--aqua-acao) !important; color: var(--off-black) !important; font-weight: 600; }
   .par figcaption { margin-top: 12px; }
@@ -164,9 +165,20 @@
   /* Como funciona */
   .pilares { list-style: none; padding: 0; border-top: 1px solid var(--linha-clara); }
   .pilar { display: grid; grid-template-columns: 40px 1fr; gap: 12px; padding: 18px 0; border-bottom: 1px solid var(--linha-clara); }
-  .pilar__n { font-size: 13px; font-weight: 600; letter-spacing: .08em; line-height: 1; color: var(--verde-aqua); padding-top: 5px; font-variant-numeric: tabular-nums; }
+  .pilar__n { color: var(--verde-aqua-texto); padding-top: 1px; }
+  .pilar__n svg.i { width: 22px; height: 22px; }
   .pilar h3 { margin-bottom: 4px; font-size: 15px; font-weight: 600; line-height: 1.35; }
   .pilar p { font-size: 14px; font-weight: 300; line-height: 1.6; color: var(--texto-suave-claro); }
+
+  /* Órbita: o acompanhamento em volta do paciente */
+  .orbita { position: relative; width: 100%; max-width: 340px; aspect-ratio: 1 / 1; margin: 6px auto 34px; }
+  .orbita svg.orbita__linhas { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .orbita__centro { position: absolute; left: 50%; top: 50%; width: 32%; aspect-ratio: 1 / 1; transform: translate(-50%, -50%); border-radius: 50%; display: grid; place-items: center; text-align: center; background: var(--aqua-acao); color: var(--off-black); box-shadow: 0 0 0 10px rgba(110,222,196,.22), 0 0 0 22px rgba(110,222,196,.1); }
+  .orbita__centro b { display: block; font-size: 22px; font-weight: 600; letter-spacing: -.02em; line-height: 1.1; }
+  .orbita__no { position: absolute; width: 96px; transform: translate(-50%, -50%); text-align: center; }
+  .orbita__ic { width: 46px; height: 46px; margin: 0 auto 6px; border-radius: 50%; display: grid; place-items: center; background: var(--off-white); color: var(--verde-escuro); box-shadow: 0 0 0 1px var(--linha-clara), 0 6px 16px rgba(6,40,37,.08); }
+  .orbita__ic svg.i { width: 21px; height: 21px; }
+  .orbita__no b { display: block; font-size: 12px; font-weight: 600; line-height: 1.25; color: var(--verde-escuro); }
 
   /* App */
   .secao--app::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(380px 300px at 100% 12%, rgba(110,222,196,.12), transparent 70%), radial-gradient(360px 300px at 0% 70%, rgba(90,121,113,.22), transparent 70%); }
@@ -183,13 +195,13 @@
   .tela figcaption { margin-top: 16px; }
   .tela figcaption b { display: block; font-size: 14px; font-weight: 600; line-height: 1.35; }
   .tela figcaption span { display: block; font-size: 13px; font-weight: 300; line-height: 1.55; color: var(--texto-suave); margin-top: 3px; }
-  .nota { font-size: 11.5px; font-weight: 300; color: rgba(241,245,243,.5); margin-top: 18px; }
+  .nota { font-size: 12px; font-weight: 300; color: rgba(241,245,243,.62); margin-top: 18px; }
 
   /* Caminhos */
   .caminhos { display: grid; gap: 14px; }
   .caminho { border-radius: var(--raio); padding: 24px 22px; border: 1px solid var(--linha-escura); background: var(--vidro); }
   .caminho--destaque { background: var(--off-white); color: var(--verde-escuro); border-color: transparent; }
-  .caminho__tag { display: inline-block; font-size: 10.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; padding: 6px 11px; border-radius: 99px; margin-bottom: 14px; background: rgba(110,222,196,.14); color: var(--aqua-acao); }
+  .caminho__tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; padding: 6px 11px; border-radius: 99px; margin-bottom: 14px; background: rgba(110,222,196,.14); color: var(--aqua-acao); }
   .caminho--destaque .caminho__tag { background: var(--verde-escuro); color: var(--off-white); }
   .caminho h3 { font-weight: 600; font-size: 23px; line-height: 1.15; letter-spacing: -.015em; margin-bottom: 8px; }
   .caminho > p { margin-bottom: 16px; font-size: 14px; font-weight: 300; line-height: 1.6; color: var(--texto-suave); }
@@ -206,7 +218,7 @@
   .sobre__foto { width: 96px; height: 120px; border-radius: 14px; overflow: hidden; background: var(--off-black); }
   .sobre__foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; transform: scale(2.1); transform-origin: 54% 27%; }
   .sobre__nome { font-weight: 600; font-size: 22px; line-height: 1.2; letter-spacing: -.015em; margin-bottom: 6px; }
-  .sobre__cargo { font-size: 11.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--verde-aqua); }
+  .sobre__cargo { font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--verde-aqua-texto); }
   .sobre__texto { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--texto-suave-claro); }
 
   /* Final */
@@ -252,6 +264,12 @@
     .btn, .link, .seta, .barra, .pontos i { transition: none; }
   }
   @media (max-width: 359px) {
+    .orbita__no { width: 78px; }
+    .orbita__ic { width: 38px; height: 38px; margin-bottom: 4px; }
+    .orbita__ic svg.i { width: 18px; height: 18px; }
+    .orbita__no b { font-size: 11px; }
+    .orbita__centro { width: 30%; box-shadow: 0 0 0 7px rgba(110,222,196,.22), 0 0 0 15px rgba(110,222,196,.1); }
+    .orbita__centro b { font-size: 16px; }
     .hero h1 { font-size: 30px; }
     .secao h2 { font-size: 26px; }
     .tela { width: 212px; }
@@ -267,6 +285,8 @@
   <symbol id="i-celular" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
   <symbol id="i-resultado" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></symbol>
   <symbol id="i-mensagem" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-feedback" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+  <symbol id="i-comunidade" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
   <symbol id="i-seta" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
   <symbol id="i-voltar" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
   <symbol id="i-externo" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
@@ -439,29 +459,39 @@
       <h2 id="t-como">Muito além de <em>um pacote de consultas.</em></h2>
       <p class="lead">Cada parte do acompanhamento existe para o seu resultado, do plano ao dia a dia, com o Paulo por perto.</p>
     </div>
+    <div class="orbita revela" role="img" aria-label="O acompanhamento em volta de você: plano e consultas, acesso 24 horas, app exclusivo, evolução e projeção, feedback semanal e comunidade">
+      <svg class="orbita__linhas" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="37" fill="none" stroke="rgba(6,40,37,.14)" stroke-width="1" vector-effect="non-scaling-stroke"/><g stroke="rgba(6,40,37,.22)" stroke-width="1" stroke-dasharray="3 4" vector-effect="non-scaling-stroke"><line x1="50" y1="50" x2="50" y2="13"/><line x1="50" y1="50" x2="82" y2="31.5"/><line x1="50" y1="50" x2="82" y2="68.5"/><line x1="50" y1="50" x2="50" y2="87"/><line x1="50" y1="50" x2="18" y2="68.5"/><line x1="50" y1="50" x2="18" y2="31.5"/></g></svg>
+      <div class="orbita__centro"><b>Você</b></div>
+      <div class="orbita__no" style="left:50%;top:13%"><div class="orbita__ic"><svg class="i" aria-hidden="true"><use href="#i-agenda"/></svg></div><b>Plano e consultas</b></div>
+      <div class="orbita__no" style="left:82%;top:31.5%"><div class="orbita__ic"><svg class="i" aria-hidden="true"><use href="#i-mensagem"/></svg></div><b>Acesso 24 horas</b></div>
+      <div class="orbita__no" style="left:82%;top:68.5%"><div class="orbita__ic"><svg class="i" aria-hidden="true"><use href="#i-celular"/></svg></div><b>App exclusivo</b></div>
+      <div class="orbita__no" style="left:50%;top:87%"><div class="orbita__ic"><svg class="i" aria-hidden="true"><use href="#i-resultado"/></svg></div><b>Evolução e projeção</b></div>
+      <div class="orbita__no" style="left:18%;top:68.5%"><div class="orbita__ic"><svg class="i" aria-hidden="true"><use href="#i-feedback"/></svg></div><b>Feedback semanal</b></div>
+      <div class="orbita__no" style="left:18%;top:31.5%"><div class="orbita__ic"><svg class="i" aria-hidden="true"><use href="#i-comunidade"/></svg></div><b>Comunidade</b></div>
+    </div>
     <ol class="pilares">
       <li class="pilar revela">
-        <span class="pilar__n" aria-hidden="true">01</span>
+        <span class="pilar__n" aria-hidden="true"><svg class="i"><use href="#i-agenda"/></svg></span>
         <div><h3>Um plano feito para você</h3><p>Feito a partir da sua avaliação, dos seus exames e da sua rotina, com consultas dentro de um cronograma até o resultado.</p></div>
       </li>
       <li class="pilar revela">
-        <span class="pilar__n" aria-hidden="true">02</span>
+        <span class="pilar__n" aria-hidden="true"><svg class="i"><use href="#i-mensagem"/></svg></span>
         <div><h3>Acesso direto ao Paulo</h3><p>Fale com ele quando precisar, a qualquer hora, sem esperar a próxima consulta.</p></div>
       </li>
       <li class="pilar revela">
-        <span class="pilar__n" aria-hidden="true">03</span>
+        <span class="pilar__n" aria-hidden="true"><svg class="i"><use href="#i-celular"/></svg></span>
         <div><h3>App exclusivo de acompanhamento do Paulo Henrique</h3><p>Dieta, lista de compras, treino e evolução em um só lugar, e você entende o porquê de cada escolha do seu plano.</p></div>
       </li>
       <li class="pilar revela">
-        <span class="pilar__n" aria-hidden="true">04</span>
+        <span class="pilar__n" aria-hidden="true"><svg class="i"><use href="#i-resultado"/></svg></span>
         <div><h3>Evolução que você enxerga</h3><p>As suas medidas ao longo do acompanhamento e uma projeção de onde o seu corpo pode chegar.</p></div>
       </li>
       <li class="pilar revela">
-        <span class="pilar__n" aria-hidden="true">05</span>
+        <span class="pilar__n" aria-hidden="true"><svg class="i"><use href="#i-feedback"/></svg></span>
         <div><h3>Feedback do Paulo toda semana</h3><p>Você conta como foi a semana e o plano se ajusta à sua rotina, até em viagem.</p></div>
       </li>
       <li class="pilar revela">
-        <span class="pilar__n" aria-hidden="true">06</span>
+        <span class="pilar__n" aria-hidden="true"><svg class="i"><use href="#i-comunidade"/></svg></span>
         <div><h3>Comunidade</h3><p>Um grupo de pacientes com o mesmo propósito, para manter o ritmo junto com quem entende.</p></div>
       </li>
     </ol>
@@ -507,20 +537,18 @@
     <div class="revela">
       <p class="sobretitulo">Como começar</p>
       <h2 id="t-caminhos">Quem tem o Paulo ao lado <em>chega mais longe.</em></h2>
-      <p class="lead">O acompanhamento individual é o caminho mais completo: o Paulo, o app, a comunidade e as consultas trabalhando juntos pelo seu resultado. Se ainda não é o momento, o ROTA é uma alternativa para começar.</p>
+      <p class="lead">Para chegar ao resultado com acompanhamento de perto, o caminho é o individual. Para começar no seu ritmo, existe o ROTA.</p>
     </div>
     <div class="caminhos">
       <article class="caminho caminho--destaque revela">
         <span class="caminho__tag">Caminho mais completo</span>
         <h3>Acompanhamento com o Paulo</h3>
-        <p>Do primeiro dia ao resultado, com o Paulo ao seu lado em cada etapa.</p>
+        <p>Tudo o que você viu acima, com a leitura individual do Paulo.</p>
         <ul>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Avaliação completa e plano alimentar sob medida</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>App exclusivo com dieta, treino e evolução</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Plano feito a partir da sua avaliação e dos seus exames</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Uma consulta por mês com o Paulo</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Ajustes toda semana a partir do seu relatório</li>
           <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Acesso direto ao Paulo, a qualquer hora</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Feedback semanal do Paulo</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Comunidade de pacientes</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Consultas incluídas no cronograma do acompanhamento</li>
         </ul>
         <a class="btn btn--escuro" href="https://api.whatsapp.com/send?phone=5563999705875&amp;text=Ol%C3%A1%2C%20vim%20do%20insta%20e%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Paulo%20Henrique" target="_blank" rel="noopener">
           <svg class="i" aria-hidden="true"><use href="#i-agenda"/></svg>Agendar consulta
@@ -607,16 +635,25 @@
     const pontos = ctrl.querySelector('.pontos');
     const [ant, prox] = ctrl.querySelectorAll('.seta');
     itens.forEach(() => pontos.appendChild(document.createElement('i')));
-    const passo = () => itens[0].getBoundingClientRect().width + parseFloat(getComputedStyle(trilho).columnGap || 14);
+    // Cada card tem a própria largura: a seta leva ao início do próximo card, não a uma distância fixa
+    const inicio = (i) => itens[i].offsetLeft - itens[0].offsetLeft;
+    const atual = () => {
+      const max = trilho.scrollWidth - trilho.clientWidth - 2;
+      if (trilho.scrollLeft >= max) return itens.length - 1;
+      let idx = 0;
+      itens.forEach((_, i) => { if (Math.abs(inicio(i) - trilho.scrollLeft) < Math.abs(inicio(idx) - trilho.scrollLeft)) idx = i; });
+      return idx;
+    };
     const atualizar = () => {
       const max = trilho.scrollWidth - trilho.clientWidth - 2;
-      const idx = trilho.scrollLeft >= max ? itens.length - 1 : Math.round(trilho.scrollLeft / passo());
+      const idx = atual();
       [...pontos.children].forEach((p, i) => p.classList.toggle('ativo', i === idx));
       ant.disabled = trilho.scrollLeft <= 2;
       prox.disabled = trilho.scrollLeft >= max;
     };
     ctrl.querySelectorAll('.seta').forEach((b) => b.addEventListener('click', () => {
-      trilho.scrollBy({ left: Number(b.dataset.dir) * passo(), behavior: reduzido ? 'auto' : 'smooth' });
+      const idx = Math.min(itens.length - 1, Math.max(0, atual() + Number(b.dataset.dir)));
+      trilho.scrollTo({ left: inicio(idx), behavior: reduzido ? 'auto' : 'smooth' });
     }));
     trilho.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight') { e.preventDefault(); prox.click(); }
